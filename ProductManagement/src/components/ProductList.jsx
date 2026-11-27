@@ -27,33 +27,27 @@ useEffect(()=>{
     <div className="w-full">
 
       {/* Heading */}
-      <div className="flex justify-between items-center mb-6">
-        <div>
-          <h2 className="text-2xl font-bold text-gray-800">
-            My Products
-          </h2>
-          <p className="text-gray-500 text-sm mt-1">
-            Manage all your products here
-          </p>
-        </div>
+      <div className="flex justify-between items-center ">
+        
 
-        <span className="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm font-semibold">
-          {filterdProducts.length}
-        </span>
+        
       </div>
 
       {/* Search Bar */}
-      <div className="mb-6">
+      <div className="mb-6 flex gap-4 p-5">
         <input onChange={(e)=>setSearch(e.target.value)}
         value={search}
           type="text"
           placeholder="Search products..."
           className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         />
+        <span className="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm font-semibold">
+          {filterdProducts.length}
+        </span>
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-4 gap-6 p-8">
 
         {
           filterdProducts.map((product)=>{

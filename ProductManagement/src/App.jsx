@@ -9,6 +9,8 @@
     JSON.parse(localStorage.getItem('Product')) || []
   )
 
+  const [toggle, setToggle] = useState(false)
+
   const [edit, setEdit] = useState(null)
   
 const [search, setSearch] = useState('')
@@ -27,6 +29,7 @@ const [search, setSearch] = useState('')
     return val.id === id
   })
   setEdit(edited)
+  setToggle(true)
   console.log(edited);
   
   }
@@ -34,10 +37,12 @@ const [search, setSearch] = useState('')
 
     return (
       <div>
-        <div><Navbar/></div>
-        <div className='grid grid-cols-2 gap-5 p-5'>
-          <ProductForm  setProducts={setProducts} edit={edit} products={products} setEdit={setEdit}/>
+        <div><Navbar  setToggle={setToggle}/></div>
+        <div className='items-center justify-center flex mt-10'>
+          {
+            toggle?<ProductForm setToggle={setToggle}  setProducts={setProducts} edit={edit} products={products} setEdit={setEdit}/>:
           <ProductList deleteBtn={deleteBtn} editBtn={editBtn} products={products} search={search} setSearch={setSearch}/>
+          }
         </div>
         
       </div>
