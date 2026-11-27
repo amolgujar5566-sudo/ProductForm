@@ -16,8 +16,8 @@ A React app to add, edit, delete and search products. Data is saved in the brows
 
 ## Getting Started
 ```bash
-git clone <your-repo-link>
-cd <project-folder>
+git clone https://github.com/amolgujar5566-sudo/ProductForm.git
+cd ProductForm/ProductManagement
 npm install
 npm run dev
 ```
